@@ -19,8 +19,13 @@ class DemoTest {
         marsRover.executeCommand(command);
 
         // then
+        int expectedX = 0;
         int expectedY = 1;
+        String expectedDirection = "N";
+
+        assertEquals(expectedX, marsRover.getX());
         assertEquals(expectedY, marsRover.getY());
+        assertEquals(expectedDirection, marsRover.getDirection());
     }
 
     @Test
@@ -37,7 +42,12 @@ class DemoTest {
 
         // then
         int expectedX = 1;
+        int expectedY = 0;
+        String expectedDirection = "E";
+
         assertEquals(expectedX, marsRover.getX());
+        assertEquals(expectedY, marsRover.getY());
+        assertEquals(expectedDirection, marsRover.getDirection());
     }
 
     @Test
@@ -53,8 +63,13 @@ class DemoTest {
         marsRover.executeCommand(command);
 
         // then
+        int expectedX = 0;
         int expectedY = -1;
+        String expectedDirection = "S";
+
+        assertEquals(expectedX, marsRover.getX());
         assertEquals(expectedY, marsRover.getY());
+        assertEquals(expectedDirection, marsRover.getDirection());
     }
 
     @Test
@@ -71,8 +86,34 @@ class DemoTest {
 
         // then
         int expectedX = -1;
+        int expectedY = 0;
+        String expectedDirection = "W";
+
         assertEquals(expectedX, marsRover.getX());
+        assertEquals(expectedY, marsRover.getY());
+        assertEquals(expectedDirection, marsRover.getDirection());
     }
 
+    @Test
+    public void should_return_direction_W_when_0_0_N_and_command_L() {
+        // given
+        String command = "L";
+        int x = 0;
+        int y = 0;
+        String direction = "N";
+        MarsRover marsRover = new MarsRover(x, y, direction);
 
+        // when
+        marsRover.executeCommand(command);
+
+        // then
+        int expectedX = 0;
+        int expectedY = 0;
+        String expectedDirection = "W";
+
+        assertEquals(expectedX, marsRover.getX());
+        assertEquals(expectedY, marsRover.getY());
+        assertEquals(expectedDirection, marsRover.getDirection());
+
+    }
 }
