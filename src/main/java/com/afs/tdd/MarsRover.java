@@ -4,7 +4,7 @@ public class MarsRover {
     private int x;
     private int y;
     private String direction;
-    
+
     public MarsRover(int x, int y, String direction) {
         this.x = x;
         this.y = y;
@@ -91,19 +91,19 @@ public class MarsRover {
 
     private void executeMoveCommand() {
         if ("N".equals(this.direction)) {
-            this.setY(this.getY() + 1);
+            this.y++;
         }
 
         if ("E".equals(this.direction)) {
-            this.setX(this.getX() + 1);
+            this.x++;
         }
 
         if ("S".equals(this.direction)) {
-            this.setY(this.getY() - 1);
+            this.y--;
         }
 
         if ("W".equals(this.direction)) {
-            this.setX(this.getX() - 1);
+            this.x--;
         }
     }
 }
