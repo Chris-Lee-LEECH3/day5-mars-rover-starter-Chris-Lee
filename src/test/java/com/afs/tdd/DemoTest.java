@@ -12,7 +12,8 @@ class DemoTest {
         String command = "W";
         int x = 0;
         int y = 0;
-        MarsRover marsRover = new MarsRover(x, y, "N");
+        String direction = "N";
+        MarsRover marsRover = new MarsRover(x, y, direction);
 
         // when
         marsRover.executeCommand(command);
@@ -28,7 +29,8 @@ class DemoTest {
         String command = "W";
         int x = 0;
         int y = 0;
-        MarsRover marsRover = new MarsRover(x, y, "E");
+        String direction = "E";
+        MarsRover marsRover = new MarsRover(x, y, direction);
 
         // when
         marsRover.executeCommand(command);
@@ -37,5 +39,40 @@ class DemoTest {
         int expectedX = 1;
         assertEquals(expectedX, marsRover.getX());
     }
+
+    @Test
+    public void should_return_x_minus_1_when_0_0_S_and_command_W() {
+        // given
+        String command = "W";
+        int x = 0;
+        int y = 0;
+        String direction = "S";
+        MarsRover marsRover = new MarsRover(x, y, direction);
+
+        // when
+        marsRover.executeCommand(command);
+
+        // then
+        int expectedY = -1;
+        assertEquals(expectedY, marsRover.getY());
+    }
+
+    @Test
+    public void should_return_x_minus_1_when_0_0_W_and_command_W() {
+        // given
+        String command = "W";
+        int x = 0;
+        int y = 0;
+        String direction = "W";
+        MarsRover marsRover = new MarsRover(x, y, direction);
+
+        // when
+        marsRover.executeCommand(command);
+
+        // then
+        int expectedX = -1;
+        assertEquals(expectedX, marsRover.getX());
+    }
+
 
 }
