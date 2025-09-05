@@ -22,4 +22,20 @@ class DemoTest {
         assertEquals(expectedY, marsRover.getY());
     }
 
+    @Test
+    public void should_return_x_plus_1_when_0_0_E_and_command_W() {
+        // given
+        String command = "W";
+        int x = 0;
+        int y = 0;
+        MarsRover marsRover = new MarsRover(x, y, "E");
+
+        // when
+        marsRover.executeCommand(command);
+
+        // then
+        int expectedX = 1;
+        assertEquals(expectedX, marsRover.getX());
+    }
+
 }

@@ -37,7 +37,21 @@ public class MarsRover {
 
     public void executeCommand(String command) {
         if ("W".equals(command)) {
-            this.setY(this.getY() + 1);
+            if ("N".equals(this.direction)) {
+                this.setY(this.getY() + 1);
+            }
+
+            if ("E".equals(this.direction)) {
+                this.setX(this.getX() + 1);
+            }
+
+            if ("S".equals(this.direction)) {
+                this.setY(this.getY() - 1);
+            }
+
+            if ("W".equals(this.direction)) {
+                this.setX(this.getX() - 1);
+            }
         }
     }
 }
