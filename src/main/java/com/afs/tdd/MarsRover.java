@@ -38,40 +38,17 @@ public class MarsRover {
     public void executeCommand(String command) {
 
         if ("W".equals(command)) {
-            if ("N".equals(this.direction)) {
-                this.setY(this.getY() + 1);
-            }
-
-            if ("E".equals(this.direction)) {
-                this.setX(this.getX() + 1);
-            }
-
-            if ("S".equals(this.direction)) {
-                this.setY(this.getY() - 1);
-            }
-
-            if ("W".equals(this.direction)) {
-                this.setX(this.getX() - 1);
-            }
+            executeMoveCommand();
         }
 
         if ("L".equals(command)) {
             if ("N".equals(this.direction)) {
                 this.setDirection("W");
-                return;
-            }
-
-            if ("E".equals(this.direction)) {
+            } else if ("E".equals(this.direction)) {
                 this.setDirection("N");
-                return;
-            }
-
-            if ("S".equals(this.direction)) {
+            } else if ("S".equals(this.direction)) {
                 this.setDirection("E");
-                return;
-            }
-
-            if ("W".equals(this.direction)) {
+            } else if ("W".equals(this.direction)) {
                 this.setDirection("S");
             }
         }
@@ -97,5 +74,23 @@ public class MarsRover {
             }
         }
 
+    }
+
+    private void executeMoveCommand() {
+        if ("N".equals(this.direction)) {
+            this.setY(this.getY() + 1);
+        }
+
+        if ("E".equals(this.direction)) {
+            this.setX(this.getX() + 1);
+        }
+
+        if ("S".equals(this.direction)) {
+            this.setY(this.getY() - 1);
+        }
+
+        if ("W".equals(this.direction)) {
+            this.setX(this.getX() - 1);
+        }
     }
 }
