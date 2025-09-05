@@ -76,5 +76,26 @@ public class MarsRover {
             }
         }
 
+        if ("R".equals(command)) {
+            if ("N".equals(this.direction)) {
+                this.setDirection("E");
+                return;
+            }
+
+            if ("E".equals(this.direction)) {
+                this.setDirection("S");
+                return;
+            }
+
+            if ("S".equals(this.direction)) {
+                this.setDirection("W");
+                return;
+            }
+
+            if ("W".equals(this.direction)) {
+                this.setDirection("N");
+            }
+        }
+
     }
 }
