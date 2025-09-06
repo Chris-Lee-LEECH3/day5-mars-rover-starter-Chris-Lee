@@ -44,7 +44,7 @@ public class MarsRover {
 
     private void executeSingleCommand(String command) {
         if ("W".equals(command)) {
-            executeMoveCommand();
+            executeMoveCommand(false);
         }
 
         if ("L".equals(command)) {
@@ -56,7 +56,7 @@ public class MarsRover {
         }
 
         if ("B".equals(command)) {
-            executeMoveBackwardCommand();
+            executeMoveCommand(true);
         }
     }
 
@@ -98,40 +98,23 @@ public class MarsRover {
         }
     }
 
-    private void executeMoveCommand() {
+    private void executeMoveCommand(boolean isMoveBackward) {
+        int moveStep = isMoveBackward ? -1 : 1;
+
         if ("N".equals(this.direction)) {
-            this.y++;
+            this.y += moveStep;
         }
 
         if ("E".equals(this.direction)) {
-            this.x++;
+            this.x += moveStep;
         }
 
         if ("S".equals(this.direction)) {
-            this.y--;
+            this.y -= moveStep;
         }
 
         if ("W".equals(this.direction)) {
-            this.x--;
-        }
-    }
-
-
-    private void executeMoveBackwardCommand() {
-        if ("N".equals(this.direction)) {
-            this.y--;
-        }
-
-        if ("E".equals(this.direction)) {
-            this.x--;
-        }
-
-        if ("S".equals(this.direction)) {
-            this.y++;
-        }
-
-        if ("W".equals(this.direction)) {
-            this.x++;
+            this.x -= moveStep;
         }
     }
 
