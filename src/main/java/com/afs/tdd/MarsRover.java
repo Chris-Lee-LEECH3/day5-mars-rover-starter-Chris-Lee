@@ -36,7 +36,13 @@ public class MarsRover {
     }
 
     public void executeCommand(String command) {
+        char[] commands = command.toCharArray();
+        for (char singleCommand : commands) {
+            executeSingleCommand(String.valueOf(singleCommand));
+        }
+    }
 
+    private void executeSingleCommand(String command) {
         if ("W".equals(command)) {
             executeMoveCommand();
         }
@@ -52,7 +58,6 @@ public class MarsRover {
         if ("B".equals(command)) {
             executeMoveBackwardCommand();
         }
-
     }
 
     private void executeTurnRightCommand() {

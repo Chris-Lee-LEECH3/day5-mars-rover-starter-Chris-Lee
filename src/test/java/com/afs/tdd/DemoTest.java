@@ -358,4 +358,114 @@ class DemoTest {
         assertEquals(expectedDirection, marsRover.getDirection());
     }
 
+    @Test
+    public void should_return_y_plus_2_when_0_0_N_and_command_WW() {
+        // given
+        String command = "WW";
+        int x = 0;
+        int y = 0;
+        String direction = "N";
+        MarsRover marsRover = new MarsRover(x, y, direction);
+
+        // when
+        marsRover.executeCommand(command);
+
+        // then
+        int expectedX = 0;
+        int expectedY = 2;
+        String expectedDirection = "N";
+
+        assertEquals(expectedX, marsRover.getX());
+        assertEquals(expectedY, marsRover.getY());
+        assertEquals(expectedDirection, marsRover.getDirection());
+    }
+
+    @Test
+    public void should_return_y_minus_2_when_0_0_N_and_command_BB() {
+        // given
+        String command = "BB";
+        int x = 0;
+        int y = 0;
+        String direction = "N";
+        MarsRover marsRover = new MarsRover(x, y, direction);
+
+        // when
+        marsRover.executeCommand(command);
+
+        // then
+        int expectedX = 0;
+        int expectedY = -2;
+        String expectedDirection = "N";
+
+        assertEquals(expectedX, marsRover.getX());
+        assertEquals(expectedY, marsRover.getY());
+        assertEquals(expectedDirection, marsRover.getDirection());
+    }
+
+    @Test
+    public void should_return_x_plus_2_when_0_0_E_and_command_WW() {
+        // given
+        String command = "WW";
+        int x = 0;
+        int y = 0;
+        String direction = "E";
+        MarsRover marsRover = new MarsRover(x, y, direction);
+
+        // when
+        marsRover.executeCommand(command);
+
+        // then
+        int expectedX = 2;
+        int expectedY = 0;
+        String expectedDirection = "E";
+
+        assertEquals(expectedX, marsRover.getX());
+        assertEquals(expectedY, marsRover.getY());
+        assertEquals(expectedDirection, marsRover.getDirection());
+    }
+
+    @Test
+    public void should_return_x_plus_1_y_plus_3_direction_N_when_0_0_E_and_command_WLWWW() {
+        // given
+        String command = "WLWWW";
+        int x = 0;
+        int y = 0;
+        String direction = "E";
+        MarsRover marsRover = new MarsRover(x, y, direction);
+
+        // when
+        marsRover.executeCommand(command);
+
+        // then
+        int expectedX = 1;
+        int expectedY = 3;
+        String expectedDirection = "N";
+
+        assertEquals(expectedX, marsRover.getX());
+        assertEquals(expectedY, marsRover.getY());
+        assertEquals(expectedDirection, marsRover.getDirection());
+    }
+
+    @Test
+    public void should_return_x_minus_3_direction_N_when_0_0_W_and_command_WWWLL() {
+        // given
+        String command = "WWWLL";
+        int x = 0;
+        int y = 0;
+        String direction = "W";
+        MarsRover marsRover = new MarsRover(x, y, direction);
+
+        // when
+        marsRover.executeCommand(command);
+
+        // then
+        int expectedX = -3;
+        int expectedY = 0;
+        String expectedDirection = "E";
+
+        assertEquals(expectedX, marsRover.getX());
+        assertEquals(expectedY, marsRover.getY());
+        assertEquals(expectedDirection, marsRover.getDirection());
+    }
+
 }
