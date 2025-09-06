@@ -49,6 +49,10 @@ public class MarsRover {
             executeTurnRightCommand();
         }
 
+        if ("B".equals(command)) {
+            executeMoveBackwardCommand();
+        }
+
     }
 
     private void executeTurnRightCommand() {
@@ -106,4 +110,24 @@ public class MarsRover {
             this.x--;
         }
     }
+
+
+    private void executeMoveBackwardCommand() {
+        if ("N".equals(this.direction)) {
+            this.y--;
+        }
+
+        if ("E".equals(this.direction)) {
+            this.x--;
+        }
+
+        if ("S".equals(this.direction)) {
+            this.y++;
+        }
+
+        if ("W".equals(this.direction)) {
+            this.x++;
+        }
+    }
+
 }
