@@ -1,9 +1,14 @@
 package com.afs.tdd;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
 public class MarsRover {
     private int x;
     private int y;
     private String direction;
+    private List<String> directions = new LinkedList<>(Arrays.asList("N", "E", "S", "W"));
 
     public MarsRover(int x, int y, String direction) {
         this.x = x;
@@ -61,41 +66,19 @@ public class MarsRover {
     }
 
     private void executeTurnRightCommand() {
-        switch (this.direction) {
-            case "N":
-                this.setDirection("E");
-                return;
-            case "E":
-                this.setDirection("S");
-                return;
-            case "S":
-                this.setDirection("W");
-                return;
-            case "W":
-                this.setDirection("N");
-                return;
-            default:
-                return;
-        }
+        turn(false);
     }
 
     private void executeTurnLeftCommand() {
-        switch (this.direction) {
-            case "N":
-                this.setDirection("W");
-                return;
-            case "E":
-                this.setDirection("N");
-                return;
-            case "S":
-                this.setDirection("E");
-                return;
-            case "W":
-                this.setDirection("S");
-                return;
-            default:
-                return;
-        }
+        turn(true);
+    }
+
+    private void turn(boolean isTurnLeft) {
+        int moveStep = isTurnLeft ? -1 : 1;
+        int currentDirectionIndex = directions.indexOf(this.direction);
+        int calculatedNextDirectionIndex = (currentDirectionIndex + moveStep) % directions.size();
+        int newDirectionIndex = calculatedNextDirectionIndex < 0 ? directions.size() - 1: calculatedNextDirectionIndex;
+        this.direction = directions.get(newDirectionIndex);
     }
 
     private void executeMoveCommand(boolean isMoveBackward) {
