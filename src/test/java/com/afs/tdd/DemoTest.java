@@ -209,14 +209,17 @@ class DemoTest {
     @Test
     public void should_return_direction_E_when_0_0_N_and_command_R() {
         // given
-        String command = "R";
         int x = 0;
         int y = 0;
         String direction = "N";
         MarsRover marsRover = new MarsRover(x, y, direction);
 
+        MarsRoverController marsRoverController = new MarsRoverController();
+        Command turnRightCommand = new TurnRightCommand(marsRover);
+        marsRoverController.addCommand(turnRightCommand);
+
         // when
-        marsRover.executeCommand(command);
+        marsRoverController.executeCommand();
 
         // then
         int expectedX = 0;
@@ -231,14 +234,17 @@ class DemoTest {
     @Test
     public void should_return_direction_N_when_0_0_W_and_command_R() {
         // given
-        String command = "R";
         int x = 0;
         int y = 0;
         String direction = "W";
         MarsRover marsRover = new MarsRover(x, y, direction);
 
+        MarsRoverController marsRoverController = new MarsRoverController();
+        Command turnRightCommand = new TurnRightCommand(marsRover);
+        marsRoverController.addCommand(turnRightCommand);
+
         // when
-        marsRover.executeCommand(command);
+        marsRoverController.executeCommand();
 
         // then
         int expectedX = 0;
@@ -253,14 +259,17 @@ class DemoTest {
     @Test
     public void should_return_direction_W_when_0_0_S_and_command_R() {
         // given
-        String command = "R";
         int x = 0;
         int y = 0;
         String direction = "S";
         MarsRover marsRover = new MarsRover(x, y, direction);
 
+        MarsRoverController marsRoverController = new MarsRoverController();
+        Command turnRightCommand = new TurnRightCommand(marsRover);
+        marsRoverController.addCommand(turnRightCommand);
+
         // when
-        marsRover.executeCommand(command);
+        marsRoverController.executeCommand();
 
         // then
         int expectedX = 0;
@@ -275,14 +284,17 @@ class DemoTest {
     @Test
     public void should_return_direction_S_when_0_0_E_and_command_R() {
         // given
-        String command = "R";
         int x = 0;
         int y = 0;
         String direction = "E";
         MarsRover marsRover = new MarsRover(x, y, direction);
 
+        MarsRoverController marsRoverController = new MarsRoverController();
+        Command turnRightCommand = new TurnRightCommand(marsRover);
+        marsRoverController.addCommand(turnRightCommand);
+
         // when
-        marsRover.executeCommand(command);
+        marsRoverController.executeCommand();
 
         // then
         int expectedX = 0;
