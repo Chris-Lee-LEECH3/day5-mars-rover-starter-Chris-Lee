@@ -40,31 +40,6 @@ public class MarsRover {
         this.direction = direction;
     }
 
-    public void executeCommand(String command) {
-        char[] commands = command.toCharArray();
-        for (char singleCommand : commands) {
-            executeSingleCommand(String.valueOf(singleCommand));
-        }
-    }
-
-    private void executeSingleCommand(String command) {
-        if ("W".equals(command)) {
-            executeMoveCommand(false);
-        }
-
-        if ("L".equals(command)) {
-            executeTurnLeftCommand();
-        }
-
-        if ("R".equals(command)) {
-            executeTurnRightCommand();
-        }
-
-        if ("B".equals(command)) {
-            executeMoveCommand(true);
-        }
-    }
-
     public void executeTurnRightCommand() {
         turn(false);
     }
