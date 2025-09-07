@@ -9,14 +9,17 @@ class DemoTest {
     @Test
     public void should_return_y_plus_1_when_0_0_N_and_command_W() {
         // given
-        String command = "W";
         int x = 0;
         int y = 0;
         String direction = "N";
         MarsRover marsRover = new MarsRover(x, y, direction);
 
+        MarsRoverController marsRoverController = new MarsRoverController();
+        Command moveForwardCommand = new MoveForwardCommand(marsRover);
+        marsRoverController.addCommand(moveForwardCommand);
+
         // when
-        marsRover.executeCommand(command);
+        marsRoverController.executeCommand();
 
         // then
         int expectedX = 0;
@@ -37,8 +40,12 @@ class DemoTest {
         String direction = "E";
         MarsRover marsRover = new MarsRover(x, y, direction);
 
+        MarsRoverController marsRoverController = new MarsRoverController();
+        Command moveForwardCommand = new MoveForwardCommand(marsRover);
+        marsRoverController.addCommand(moveForwardCommand);
+
         // when
-        marsRover.executeCommand(command);
+        marsRoverController.executeCommand();
 
         // then
         int expectedX = 1;
@@ -59,8 +66,12 @@ class DemoTest {
         String direction = "S";
         MarsRover marsRover = new MarsRover(x, y, direction);
 
+        MarsRoverController marsRoverController = new MarsRoverController();
+        Command moveForwardCommand = new MoveForwardCommand(marsRover);
+        marsRoverController.addCommand(moveForwardCommand);
+
         // when
-        marsRover.executeCommand(command);
+        marsRoverController.executeCommand();
 
         // then
         int expectedX = 0;
@@ -81,8 +92,12 @@ class DemoTest {
         String direction = "W";
         MarsRover marsRover = new MarsRover(x, y, direction);
 
+        MarsRoverController marsRoverController = new MarsRoverController();
+        Command moveForwardCommand = new MoveForwardCommand(marsRover);
+        marsRoverController.addCommand(moveForwardCommand);
+
         // when
-        marsRover.executeCommand(command);
+        marsRoverController.executeCommand();
 
         // then
         int expectedX = -1;

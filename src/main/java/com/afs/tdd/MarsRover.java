@@ -65,11 +65,11 @@ public class MarsRover {
         }
     }
 
-    private void executeTurnRightCommand() {
+    public void executeTurnRightCommand() {
         turn(false);
     }
 
-    private void executeTurnLeftCommand() {
+    public void executeTurnLeftCommand() {
         turn(true);
     }
 
@@ -81,7 +81,7 @@ public class MarsRover {
         this.direction = directions.get(newDirectionIndex);
     }
 
-    private void executeMoveCommand(boolean isMoveBackward) {
+    public void executeMoveCommand(boolean isMoveBackward) {
         int moveStep = isMoveBackward ? -1 : 1;
 
         if ("N".equals(this.direction)) {
